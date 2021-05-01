@@ -3,6 +3,7 @@ import requests
 import checktime
 import smtplib
 import time
+import config
 
 getNow = checktime.timeCheck()
 
@@ -25,7 +26,7 @@ def send_mail():
     server.starttls()
     server.ehlo()
 
-    server.login('egeege95@gmail.com', 'rmbybderqnorwbuj')
+    server.login('egeege95@gmail.com', config.password)
 
     subject = 'Price fell down!'
     body = "Check the product link: https://www.pt.com.tr/macbook-air-13-3-inc-m1-8c-8gb-ram-256gb-ssd-uzay-grisi-mgn63tu-a"
